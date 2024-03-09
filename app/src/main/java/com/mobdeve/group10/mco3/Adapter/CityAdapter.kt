@@ -10,20 +10,24 @@ import com.mobdeve.group10.mco3.Activity.MainActivity
 import com.mobdeve.group10.mco3.databinding.CityViewholderBinding
 import com.mobdeve.group10.mco3.model.CityResponseApi
 
-
 class CityAdapter : RecyclerView.Adapter<CityAdapter.ViewHolder>() {
+
+    // lateinit used for late initialization of binding
     private lateinit var binding: CityViewholderBinding
 
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityAdapter.ViewHolder {
+    // Create ViewHolder
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         binding = CityViewholderBinding.inflate(inflater, parent, false)
         return ViewHolder()
     }
 
-    override fun onBindViewHolder(holder: CityAdapter.ViewHolder, position: Int) {
+    // Bind data to ViewHolder
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val binding = CityViewholderBinding.bind(holder.itemView)
-        binding.cityTxt.text=differ.currentList[position].name
+        // Set city name in TextView
+        binding.cityTxt.text = differ.currentList[position].name
+        // Open MainActivity when item clicked, passing latitude, longitude, and name
         binding.root.setOnClickListener {
             val intent = Intent(binding.root.context, MainActivity::class.java)
             intent.putExtra("lat", differ.currentList[position].lat)
@@ -31,19 +35,21 @@ class CityAdapter : RecyclerView.Adapter<CityAdapter.ViewHolder>() {
             intent.putExtra("name", differ.currentList[position].name)
             binding.root.context.startActivity(intent)
         }
-
     }
 
     inner class ViewHolder : RecyclerView.ViewHolder(binding.root)
 
+    // Return number of items in list
     override fun getItemCount() = differ.currentList.size
 
+    // DiffUtil callback for calculating differences between lists
     private val differCallback =
         object : DiffUtil.ItemCallback<CityResponseApi.CityResponseApiItem>() {
             override fun areItemsTheSame(
                 oldItem: CityResponseApi.CityResponseApiItem,
                 newItem: CityResponseApi.CityResponseApiItem
             ): Boolean {
+                // Check if items are the same
                 return oldItem == newItem
             }
 
@@ -51,10 +57,11 @@ class CityAdapter : RecyclerView.Adapter<CityAdapter.ViewHolder>() {
                 oldItem: CityResponseApi.CityResponseApiItem,
                 newItem: CityResponseApi.CityResponseApiItem
             ): Boolean {
+                // Check if contents are the same
                 return oldItem == newItem
             }
-
         }
-    val differ = AsyncListDiffer(this, differCallback)
 
+    // AsyncListDiffer to compute differences between current and new list
+    val differ = AsyncListDiffer(this, differCallback)
 }
