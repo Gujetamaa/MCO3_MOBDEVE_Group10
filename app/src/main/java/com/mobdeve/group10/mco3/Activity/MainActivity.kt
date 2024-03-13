@@ -23,6 +23,13 @@ import retrofit2.Call
 import retrofit2.Response
 import java.util.Calendar
 
+/*
+* still need to figure out how to have a settings button and activity for celsius to fahrenheit
+* need to keep the city input even after restarting or closing the app
+* social media sharing buttons(no idea as of now)
+* fix city search buttons to pop up on the list as the user is typing a name of a city/country
+ */
+
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private val weatherViewModel: WeatherViewModel by viewModels()
