@@ -25,9 +25,16 @@ import java.util.Calendar
 
 /*
 * still need to figure out how to have a settings button and activity for celsius to fahrenheit
+*
 * need to keep the city input even after restarting or closing the app
+*   (will use room database for this)
+*
+*
 * social media sharing buttons(no idea as of now)
-* fix city search buttons to pop up on the list as the user is typing a name of a city/country
+*
+* fix city search buttons to pop up on the list as the user is
+* typing a name of a city/country
+* --- no solution, geocoding API and 5 is already the max limit for free account
  */
 
 class MainActivity : AppCompatActivity() {

@@ -1,8 +1,11 @@
 package com.mobdeve.group10.mco3.model
 
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
 class CityResponseApi : ArrayList<CityResponseApi.CityResponseApiItem>(){
+
+    @Entity(tableName = "cities")
     data class CityResponseApiItem(
         @SerializedName("country")
         val country: String?,
@@ -228,6 +231,8 @@ class CityResponseApi : ArrayList<CityResponseApi.CityResponseApiItem>(){
             val os: String?,
             @SerializedName("pa")
             val pa: String?,
+            @SerializedName("ph")
+            val ph: String?,
             @SerializedName("pl")
             val pl: String?,
             @SerializedName("ps")
