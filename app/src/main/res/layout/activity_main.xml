@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".Activity.MainActivity">
 
+
     <ImageView
-        android:id="@+id/bgImage"
+        android:id="@+id/backgroundIv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
@@ -25,10 +26,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <ImageView
+            android:id="@+id/settingsIv"
+            android:layout_width="49dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Settings"
+            android:padding="8dp"
+            android:src="@drawable/ic_settings"
+            android:clickable="true"/>
+
+    </com.github.matteobattilana.weather.WeatherView>
 
     <ImageView
-        android:id="@+id/addCity"
+        android:id="@+id/addCityIv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -39,7 +53,7 @@
         app:srcCompat="@drawable/plus" />
 
     <TextView
-        android:id="@+id/cityTxt"
+        android:id="@+id/cityTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
@@ -72,7 +86,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cityTxt">
+        app:layout_constraintTop_toBottomOf="@+id/cityTv">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -89,7 +103,7 @@
                 app:srcCompat="@drawable/wind" />
 
             <TextView
-                android:id="@+id/windTxt"
+                android:id="@+id/windTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -123,7 +137,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/statusTxt"
+                android:id="@+id/statusTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:shadowColor="@color/black"
@@ -136,7 +150,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/currentTempTxt"
+                android:id="@+id/currentTempTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-10dp"
@@ -166,7 +180,7 @@
                     app:srcCompat="@drawable/arrow_up" />
 
                 <TextView
-                    android:id="@+id/maxTempTxt"
+                    android:id="@+id/maxTempTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
@@ -180,7 +194,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/minTempTxt"
+                    android:id="@+id/minTempTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -216,7 +230,7 @@
                 app:srcCompat="@drawable/humidity" />
 
             <TextView
-                android:id="@+id/humidityTxt"
+                android:id="@+id/humidityTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -255,7 +269,7 @@
         android:background="@drawable/forecast_bg"
         android:visibility="gone"
         app:blurOverlayColor="#10ffffff"
-        app:layout_constraintBottom_toBottomOf="@+id/bgImage"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundIv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible">

@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.mobdeve.group10.mco3"
-        minSdk = 26
+        minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"

@@ -15,6 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MCO3"
         tools:targetApi="31">
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="SettingsActivity"
+            android:exported="false" />
         <activity
             android:name=".Activity.CityListActivity"
             android:exported="false" />

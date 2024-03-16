@@ -10,7 +10,7 @@
 
 
     <TextView
-        android:id="@+id/nameDayTxt"
+        android:id="@+id/nameDayTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -24,7 +24,7 @@
         android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/hourTxt"
+        android:id="@+id/hourTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:shadowColor="@color/black"
@@ -37,7 +37,7 @@
         android:textSize="14sp" />
 
     <ImageView
-        android:id="@+id/pic"
+        android:id="@+id/weatherIv"
         android:layout_width="45dp"
         android:layout_height="45dp"
 
@@ -45,7 +45,7 @@
         app:srcCompat="@drawable/sunny" />
 
     <TextView
-        android:id="@+id/tempTxt"
+        android:id="@+id/tempTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:shadowColor="@color/black"

@@ -41,16 +41,16 @@ class ForecastAdapter : RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
             7 -> "Sat"
             else -> "-"
         }
-        binding.nameDayTxt.text = dayOfWeekName
+        binding.nameDayTv.text = dayOfWeekName
 
         // Set hour and AM/PM
         val hour = calendar.get(Calendar.HOUR_OF_DAY)
         val amPm = if (hour < 12) "am" else "pm"
         val hour12 = calendar.get(Calendar.HOUR)
-        binding.hourTxt.text = hour12.toString() + amPm
+        binding.hourTv.text = hour12.toString() + amPm
 
         // Set temperature
-        binding.tempTxt.text = differ.currentList[position].main?.temp?.let { Math.round(it) }.toString() + "°"
+        binding.tempTv.text = differ.currentList[position].main?.temp?.let { Math.round(it) }.toString() + "°"
 
         // Set weather icon
         val icon = when (differ.currentList[position].weather?.get(0)?.icon.toString()) {
@@ -75,7 +75,7 @@ class ForecastAdapter : RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
         // Load weather icon using Glide
         Glide.with(binding.root.context)
             .load(drawableResourceId)
-            .into(binding.pic)
+            .into(binding.weatherIv)
     }
 
     inner class ViewHolder : RecyclerView.ViewHolder(binding.root)
