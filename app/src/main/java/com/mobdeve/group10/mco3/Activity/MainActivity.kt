@@ -81,8 +81,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.apply {
             // Retrieve data from the intent or use default values
-             lat = intent.getDoubleExtra("lat", 0.0)
-             lon = intent.getDoubleExtra("lon", 0.0)
+            lat = intent.getDoubleExtra("lat", 0.0)
+            lon = intent.getDoubleExtra("lon", 0.0)
             var name = intent.getStringExtra("name")
 
             // manual setting of Manila when the app runs
@@ -93,9 +93,15 @@ class MainActivity : AppCompatActivity() {
             }
 
             // Handle button click to open CityListActivity
-            addCityIv.setOnClickListener {
+            searchCityIv.setOnClickListener {
                 startActivity(Intent(this@MainActivity, CityListActivity::class.java))
             }
+
+            // Set OnClickListener for the settings button
+            settingsIv.setOnClickListener {
+                startActivity(Intent(this@MainActivity, SettingsActivity::class.java))
+            }
+
 
             // Load current weather data
             cityTv.text = name
